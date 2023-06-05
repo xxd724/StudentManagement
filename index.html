@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学生管理系统2</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+    <!-- 头部 -->
+    <header>
+        <img src="./images/logo.png" alt="" />
+        <span>渡一教育</span>
+    </header>
+    <div class="stuContainer">
+        <!-- 左侧菜单栏 -->
+        <div class="leftMenu">
+            <h2>学生管理</h2>
+            <div class="leftMenuItem itemActive">学生列表</div>
+            <div class="leftMenuItem">新增学生</div>
+        </div>
+        <!-- 右侧内容框 -->
+        <div class="rightContent">
+            <!-- 学生列表区域 -->
+            <div>
+                <!-- 搜索框 -->
+                <div class="searchBox">
+                    <select id="selectSearchItem">
+                        <option value="stuId">学号</option>
+                        <option value="stuName">姓名</option>
+                        <option value="stuGender">性别</option>
+                        <option value="stuEmail">邮箱</option>
+                        <option value="stuAge">年龄</option>
+                        <option value="stuTel">手机号</option>
+                        <option value="stuAddr">地址</option>
+                    </select>
+                    <input type="text" id="searchStu" placeholder="请输入要搜索的内容">
+                    <button type="button" id="searchBtn" class="operationBtn searchBtn">搜索</button>
+                    <button type="button" id="backBtn" class="operationBtn backBtn">返回</button>
+                </div>
+                <!-- 新增学生按钮 -->
+                <div class="addStuBtnGrounp">
+                    <button id="addStuRandom" class="operationBtn" type="button">随机新增</button>
+                    <button id="addStuBtnByForm" class="operationBtn" type="button">自定义新增</button>
+                </div>
+                <!-- 学生表格 -->
+                <table id="stuTable" class="table"></table>
+                <!-- 分页栏 -->
+                <ul id="pageSelect" class="pagination"></ul>
+            </div>
+            <!-- 新增以及修改学生区域 -->
+            <div class="addStu notShow">
+                <form id="addStuForm">
+                    <div>
+                        <label for="stuName">姓名</label>
+                        <input type="text" name="stuName" id="stuName" placeholder="请输入学生姓名">
+                        <span id="validateName" class="regValidate"></span>
+                    </div>
+                    <div>
+                        <label for="stuGender">性别</label>
+                        <span>
+                            男<input type="radio" name="gender" class="gender" value="男" id="male" checked>
+                        </span>
+                        <span>
+                            女<input type="radio" name="gender" class="gender" value="女" id="female">
+                        </span>
+                    </div>
+                    <div>
+                        <label for="stuEmail">邮箱</label>
+                        <input type="text" name="stuEmail" id="stuEmail" placeholder="请输入邮箱地址">
+                        <span id="validateEmail" class="regValidate"></span>
+                    </div>
+                    <div>
+                        <label for="stuAge">年龄</label>
+                        <input type="text" name="stuAge" id="stuAge" placeholder="请输入年龄">
+                        <span id="validateAge" class="regValidate"></span>
+                    </div>
+                    <div>
+                        <label for="stuTel">手机号</label>
+                        <input type="text" name="stuTel" id="stuTel" placeholder="请输入手机号">
+                        <span id="validateTel" class="regValidate"></span>
+                    </div>
+                    <div>
+                        <label for="stuAddr">地址</label>
+                        <input type="text" name="stuAddr" id="stuAddr" placeholder="请输入地址">
+                        <span id="validateAddr" class="regValidate"></span>
+                    </div>
+                    <div class="formBtn">
+                        <input type="button" id="addStuBtn" class="operationBtn" value="提交">
+                        <input type="button" id="backStuList" class="operationBtn" value="返回">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.bootcdn.net/ajax/libs/Mock.js/1.0.1-beta3/mock-min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./api/api.js"></script>
+</body>
+
+</html>
